@@ -1,0 +1,26 @@
+@font-face {
+  src: url(../../assets/fonts/Poppins-Regular.ttf);
+  font-family: 'title';
+}
+
+@font-face {
+  src: url(../../assets/fonts/OpenSans-Regular.ttf);
+  font-family: 'elements';
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'elements';
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  font-family: 'title';
+}
