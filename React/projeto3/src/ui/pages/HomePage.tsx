@@ -24,23 +24,17 @@ function HomePage() {
       <span>{number}</span>
 
       <div className="action-row">
-        <MeuBotao
-          text="Somar 1"
-          backgroundColor="royalblue"
-          onClick={somar}
-        />
+        <MeuBotao backgroundColor="royalblue" onClick={somar}>
+          Somar 1
+        </MeuBotao>
 
-        <MeuBotao
-          text="Subtrair 1"
-          backgroundColor="goldenrod"
-          onClick={subtrair}
-        />
+        <MeuBotao backgroundColor="goldenrod" onClick={subtrair}>
+          Subtrair 1
+        </MeuBotao>
 
-        <MeuBotao
-          text="Multiplicar por 2"
-          backgroundColor="springgreen"
-          onClick={multiplicar}
-        />
+        <MeuBotao backgroundColor="springgreen" onClick={multiplicar}>
+          Multiplicar por 2
+        </MeuBotao>
       </div>
     </div>
   )

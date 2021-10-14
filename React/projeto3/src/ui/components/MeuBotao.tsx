@@ -1,25 +1,26 @@
+import { ReactNode } from 'react'
 import '../styles/components/MeuBotao.css'
 
 interface MeuBotaoProps {
-  text?: string
+  children?: ReactNode
   backgroundColor?: string
   onClick(): void
 }
 
-function MeuBotao(props: MeuBotaoProps) {
+function MeuBotao({ children, backgroundColor, onClick }: MeuBotaoProps) {
   const inlineStyles: Record<string, string | number> = {}
 
-  if (props.backgroundColor) {
-    inlineStyles.backgroundColor = props.backgroundColor
+  if (backgroundColor) {
+    inlineStyles.backgroundColor = backgroundColor
   }
 
   return (
     <button
       className="meuBotao"
       style={inlineStyles}
-      onClick={props.onClick}
+      onClick={onClick}
     >
-      {props.text}
+      {children}
     </button>
   )
 }
