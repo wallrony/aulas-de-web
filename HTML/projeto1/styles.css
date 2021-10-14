@@ -9,12 +9,26 @@
 }
 
 html, body {
-  height: 100%;
-  width: 100%;
+  width: 100%; /* Largura */
+  height: 100%; /* Altura */
 }
 
+/* Unordered list - Lista não ordenada */
 ul {
-  list-style: none;
+  list-style: none; /* Ícone antes dos itens (ex.: · item) */
+}
+
+.identation-line {
+  width: 20px;
+  height: 3px;
+  background-color: black;
+}
+
+.identation-line.before-title {
+  width: 48px;
+  height: 8px;
+
+  margin: 0 1.5rem;
 }
 
 /* ---------------------- */
@@ -22,8 +36,60 @@ ul {
 
 /* Header styles */
 header {
+  /*
+    A propriedade display serve para definir o modo como os elementos filhos do
+    elemento pai (nesse caso, é o elemento header) irão ser apresentados.
+
+    - flex: apresenta os elementos filhos do elemento de forma flexível,
+      colocando, por padrão, um ao lado do outro com a propriedade
+      flex-direction definida com o valor "row" por padrão, o que faz com que os
+      elementos filhos fiquem um ao lado do outro.
+    
+      Obs.: elementos filhos é o conteúdo de dentro de uma tag. Exemplo: dois
+      botões que estão dentro de uma div, são os elementos filhos da div.
+  */
   display: flex;
+
+  /*
+    A propriedade justify-content ajusta no alinhamento dos elementos filhos de
+    acordo com a direção flexível (flex-direction). Caso o flex-direction esteja
+    definido como "row", o justify-content irá ajustar os filhos de forma
+    horizontal, caso esteja definida como "column", irá ajustar os filhos de
+    forma vertical.
+
+    - flex-start: ajusta os filhos colocando todos alinhados ao inicio da
+      orientação. Ex.: caso o flex-direction esteja definido como "row", todos
+      os itens ficarão no início horizontal da linha.
+    
+    - flex-end: ajusta os filhos colocando todos alinhados ao final da
+      orientação. Ex.: caso o flex-direction esteja definido como "row", todos
+      os itens ficarão no final horizontal da linha.
+
+    - space-between: ajusta os filhos colocando o espaço restante entre eles.
+      ex.: caso, dentro do header, exista dois botoes que têm uma largura de 50
+      pixeis enquanto o header tenha 200 pixels, os 100px restantes sem ocupação
+      serão colocados entre os botões.
+  */
   justify-content: space-between;
+
+  /*
+    A propriedade align-items ajusta no alinhamento dos elementos filhos de
+    acordo com a direção flexível (flex-direction). Caso o flex-direction esteja
+    definido como "row", o align-items irá ajustar os filhos de forma
+    vertical, caso esteja definida como "column", irá ajustar os filhos de
+    forma horizontal.
+
+    - flex-start: ajusta os filhos colocando todos alinhados ao inicio da
+      orientação. Ex.: caso o flex-direction esteja definido como "row", todos
+      os itens ficarão no início vertical da linha.
+    
+    - flex-end: ajusta os filhos colocando todos alinhados ao final da
+      orientação. Ex.: caso o flex-direction esteja definido como "row", todos
+      os itens ficarão no final vertical da linha.
+
+    - center: ajusta os elementos filhos colocando-os verticalmente
+      centralizados.
+  */
   align-items: center;
 
   margin: 2rem 6rem;
@@ -72,21 +138,64 @@ main {
 
 main div.grid {
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 main div.grid.col-2 {
   grid-template-columns: 1fr 1fr;
 }
 
+main div.grid div.left-side div {
+  display: flex;
+  align-items: center;
+}
+
 main div.grid div.left-side p {
   font-size: 1.25rem;
+
+  margin-left: .5rem;
 }
 
 main div.grid div.left-side h2 {
   font-size: 4rem;
 }
 
-main div.grid div.left-side h2:first-of-type {
+main div.grid div.left-side > h2:first-of-type {
   margin: 2rem 0 0;
+}
+
+main div.grid div.left-side > h2:first-of-type img {
+  height: 44px;
+}
+
+main div.grid div.left-side .description {
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin-top: 2rem;
+}
+
+main div.grid div.left-side .description p:first-child {
+  margin-bottom: .5rem;
+}
+
+main div.grid div.left-side .download {
+  margin-top: 4rem;
+}
+
+main div.grid div.left-side .download button {
+  padding: 1.25rem 2.85rem;
+
+  font-weight: bold;
+
+  background-color: transparent;
+
+  border: 1px solid gray;
+  border-radius: 36px;
+}
+
+main div.grid div.left-side .download p {
+  font-size: .9rem;
+
+  margin-left: 1.5rem;
 }
